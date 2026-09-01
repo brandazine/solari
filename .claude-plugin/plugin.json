@@ -1,0 +1,13 @@
+{
+	"name": "solari",
+	"version": "0.1.0",
+	"description": "Creator and brand data from SOLARI as a Claude connector plus agent skill. Instagram now, more platforms coming soon.",
+	"author": {
+		"name": "Brandazine",
+		"url": "https://solari.brandazine.com"
+	},
+	"homepage": "https://solari.brandazine.com",
+	"repository": "https://github.com/brandazine/solari",
+	"license": "SEE LICENSE IN LICENSE",
+	"keywords": ["solari", "instagram", "creator", "brand", "analytics", "mcp"]
+}

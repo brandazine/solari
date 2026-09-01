@@ -1,0 +1,14 @@
+{
+	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+	"name": "io.github.brandazine/solari",
+	"title": "SOLARI",
+	"description": "Creator and brand intelligence for social platforms: accounts, sponsored posts, trends.",
+	"version": "0.1.0",
+	"websiteUrl": "https://solari.brandazine.com",
+	"remotes": [
+		{
+			"type": "streamable-http",
+			"url": "https://solari-mcp.brandazine.ai/mcp"
+		}
+	]
+}

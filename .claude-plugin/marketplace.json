@@ -1,0 +1,17 @@
+{
+	"name": "brandazine",
+	"owner": {
+		"name": "Brandazine",
+		"url": "https://solari.brandazine.com"
+	},
+	"metadata": {
+		"description": "Brandazine's plugin marketplace. Home of the SOLARI plugin."
+	},
+	"plugins": [
+		{
+			"name": "solari",
+			"source": ".",
+			"description": "Creator and brand data from SOLARI as a Claude connector plus agent skill. Instagram now, more platforms coming soon."
+		}
+	]
+}
