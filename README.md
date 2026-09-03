@@ -20,16 +20,16 @@ What ships here:
 macOS / Linux:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/brandazine/solari/main/install.sh | sh
+curl -fsSL https://solari.sh/install | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-irm https://raw.githubusercontent.com/brandazine/solari/main/install.ps1 | iex
+irm https://solari.sh/install.ps1 | iex
 ```
 
-The script downloads the right file for your machine, checks it against the release checksums, and installs it. Set `SOLARI_VERSION=1.0.0-alpha.1` to pin a version, `SOLARI_INSTALL_DIR` to change where it goes.
+The script downloads the right file for your machine, checks it against the release checksums, and installs it. Set `SOLARI_VERSION=1.0.0-alpha.10` to pin a version, `SOLARI_INSTALL_DIR` to change where it goes.
 
 Or use a package manager:
 

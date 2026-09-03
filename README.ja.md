@@ -20,16 +20,16 @@ $ solari get instagram content trending region=JP limit=10 --json
 macOS / Linux:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/brandazine/solari/main/install.sh | sh
+curl -fsSL https://solari.sh/install | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-irm https://raw.githubusercontent.com/brandazine/solari/main/install.ps1 | iex
+irm https://solari.sh/install.ps1 | iex
 ```
 
-スクリプトが環境に合ったファイルを選び、チェックサムを検証してからインストールします。バージョンを固定するなら`SOLARI_VERSION=1.0.0-alpha.1`、インストール先を変えるなら`SOLARI_INSTALL_DIR`を指定してください。
+スクリプトが環境に合ったファイルを選び、チェックサムを検証してからインストールします。バージョンを固定するなら`SOLARI_VERSION=1.0.0-alpha.10`、インストール先を変えるなら`SOLARI_INSTALL_DIR`を指定してください。
 
 手動で入れる場合は[Releases](https://github.com/brandazine/solari/releases)からダウンロードしてPATHに置くだけです。macOSでブラウザからダウンロードしたファイルは、初回実行時にシステム設定のプライバシーとセキュリティで許可が必要なことがあります。
 

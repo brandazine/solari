@@ -7,13 +7,13 @@ You are an AI agent installing the SOLARI CLI for your user. Follow the steps in
 macOS / Linux:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/brandazine/solari/main/install.sh | sh
+curl -fsSL https://solari.sh/install | sh
 ```
 
 Windows (PowerShell):
 
 ```powershell
-irm https://raw.githubusercontent.com/brandazine/solari/main/install.ps1 | iex
+irm https://solari.sh/install.ps1 | iex
 ```
 
 The script picks the right binary for the machine, verifies it against the release checksums, and installs to `~/.local/bin` (macOS/Linux) or `%LOCALAPPDATA%\Programs\solari` (Windows).
