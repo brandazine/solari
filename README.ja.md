@@ -90,7 +90,7 @@ solari auth status
 
 ## Claudeコネクタ
 
-CLIなしでコネクタだけ接続することもできます。アドレスは`https://solari-mcp.brandazine.ai/mcp`で、SOLARIアカウントでサインインして使います。
+CLIなしでコネクタだけ接続することもできます。アドレスは`https://solari.sh/mcp`で、SOLARIアカウントでサインインして使います。
 
 Claude Codeではプラグインが一番簡単です。コネクタとスキルが一緒にインストールされます:
 
@@ -102,7 +102,7 @@ Claude Codeではプラグインが一番簡単です。コネクタとスキル
 コネクタだけ追加する場合:
 
 ```sh
-claude mcp add --transport http solari https://solari-mcp.brandazine.ai/mcp
+claude mcp add --transport http solari https://solari.sh/mcp
 ```
 
 claude.aiとClaude Desktopでは、設定のコネクタから上記アドレスをカスタムコネクタとして追加してください。他のMCPホストもstreamable HTTPとOAuthに対応していれば接続できます。

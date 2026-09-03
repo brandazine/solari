@@ -90,7 +90,7 @@ solari auth status
 
 ## Claude 커넥터
 
-CLI 없이 커넥터만 붙여도 됩니다. 주소는 `https://solari-mcp.brandazine.ai/mcp`이고, SOLARI 계정으로 로그인해서 씁니다.
+CLI 없이 커넥터만 붙여도 됩니다. 주소는 `https://solari.sh/mcp`이고, SOLARI 계정으로 로그인해서 씁니다.
 
 Claude Code에서는 플러그인이 제일 간단합니다. 커넥터에 스킬까지 같이 설치됩니다:
 
@@ -102,7 +102,7 @@ Claude Code에서는 플러그인이 제일 간단합니다. 커넥터에 스킬
 커넥터만 붙이려면:
 
 ```sh
-claude mcp add --transport http solari https://solari-mcp.brandazine.ai/mcp
+claude mcp add --transport http solari https://solari.sh/mcp
 ```
 
 claude.ai와 Claude Desktop에서는 설정의 커넥터 메뉴에서 위 주소를 커스텀 커넥터로 추가하면 됩니다. 다른 MCP 호스트도 streamable HTTP와 OAuth를 지원하면 연결됩니다.

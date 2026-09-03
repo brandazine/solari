@@ -102,7 +102,7 @@ Things agents rely on:
 
 ## Claude connector
 
-You can skip the CLI and connect Claude directly. The address is `https://solari-mcp.brandazine.ai/mcp`, and you sign in with your SOLARI account.
+You can skip the CLI and connect Claude directly. The address is `https://solari.sh/mcp`, and you sign in with your SOLARI account.
 
 In Claude Code the plugin is the easiest path. It installs the connector and the skill together:
 
@@ -114,7 +114,7 @@ In Claude Code the plugin is the easiest path. It installs the connector and the
 To add just the connector:
 
 ```sh
-claude mcp add --transport http solari https://solari-mcp.brandazine.ai/mcp
+claude mcp add --transport http solari https://solari.sh/mcp
 ```
 
 On claude.ai and Claude Desktop, add the address as a custom connector in the Connectors settings. Other MCP hosts work too if they support streamable HTTP with OAuth.

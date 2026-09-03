@@ -12,7 +12,7 @@ We will acknowledge reports as quickly as we can, typically within a few busines
 ## Scope
 
 - `solari` CLI release binaries distributed through this repository
-- The SOLARI connector at `solari-mcp.brandazine.ai`
+- The SOLARI connector at `solari.sh`
 - The Claude Code plugin in this repository
 
 ## Out of scope

@@ -2,7 +2,7 @@
 	"mcpServers": {
 		"solari": {
 			"type": "http",
-			"url": "https://solari-mcp.brandazine.ai/mcp"
+			"url": "https://solari.sh/mcp"
 		}
 	}
 }
