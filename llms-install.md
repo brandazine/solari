@@ -16,25 +16,35 @@ Windows (PowerShell):
 irm https://solari.sh/install.ps1 | iex
 ```
 
-The script picks the right binary for the machine, verifies it against the release checksums, and installs to `~/.local/bin` (macOS/Linux) or `%LOCALAPPDATA%\Programs\solari` (Windows).
+The script picks the right binary for the machine, verifies it against the release checksums, installs to `~/.local/bin` (macOS/Linux) or `%LOCALAPPDATA%\Programs\solari` (Windows), and then runs `solari init --detected` so every agent already on this machine gets its skill file. The install writes outside the project folder; if your sandbox blocks it, ask the user to approve rather than skipping.
 
 ## 2. Check it is on PATH
 
-Run `solari --version`. If the command is not found on macOS/Linux, add the install directory to PATH for this session and suggest the user persist it in their shell profile:
+Run `solari --version`. If the command is not found, the install directory is not on PATH in this shell yet. Fix it for this session and keep going.
+
+macOS/Linux (suggest the user persist it in their shell profile):
 
 ```sh
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
-On Windows the installer adds the directory to the user PATH; a new terminal may be needed.
+Windows (the installer already added it to the user PATH, but a shell opened before the install, including the one your host app started, does not see it until the app restarts):
+
+```powershell
+$env:Path = "$env:LOCALAPPDATA\Programs\solari;$env:Path"
+```
+
+If your shell does not persist between commands, call the binary by its full path: `~/.local/bin/solari` or `& "$env:LOCALAPPDATA\Programs\solari\solari.exe"`.
 
 ## 3. Register the CLI with agents on this machine
 
+The installer already did this. Run it again to confirm; it is safe to repeat:
+
 ```sh
-solari init --yes
+solari init --detected
 ```
 
-This installs a Claude Code skill, a managed section in Codex's AGENTS.md, and zsh completion, for whichever of those exist on the machine. After this, agents (including you, in future sessions) reach for `solari` on their own when a question is about Instagram data. `solari init --remove` undoes it.
+This writes a skill for Claude Code (`~/.claude/skills/solari/SKILL.md`), a skill plus a managed `AGENTS.md` section for Codex (`~/.agents/skills/solari/SKILL.md`, `~/.codex/AGENTS.md`), and the same for Grok Build, Antigravity CLI, and OpenCode, for whichever exist on the machine or are running you right now. After this, agents (including you, in future sessions) reach for `solari` on their own when a question is about Instagram or TikTok data. If it reports nothing found, name the host: `solari init codex` or `solari init claude`. `solari init --remove` undoes it.
 
 ## 4. Sign in (requires the user)
 

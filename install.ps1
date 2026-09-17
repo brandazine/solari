@@ -51,11 +51,27 @@ try {
 		Write-Log "note: could not record the install channel in $markerDir"
 	}
 
+	try {
+		$previousErrorAction = $ErrorActionPreference
+		$ErrorActionPreference = "Continue"
+		$initOutput = & (Join-Path $InstallDir "solari.exe") init --detected 2>&1
+		$ErrorActionPreference = $previousErrorAction
+		foreach ($line in $initOutput) {
+			$text = "$line".Trim()
+			if ($text) { Write-Log $text }
+		}
+	} catch {
+		Write-Log "note: could not register agents automatically - run: solari init"
+	}
+
+	if (($env:Path -split ";") -notcontains $InstallDir) {
+		$env:Path = "$InstallDir;$env:Path"
+	}
 	$userPath = [Environment]::GetEnvironmentVariable("Path", "User")
 	if (-not $userPath) { $userPath = "" }
 	if (($userPath -split ";") -notcontains $InstallDir) {
 		[Environment]::SetEnvironmentVariable("Path", ($userPath.TrimEnd(";") + ";" + $InstallDir), "User")
-		Write-Log "added $InstallDir to your user PATH — open a new terminal to pick it up"
+		Write-Log "added $InstallDir to your user PATH — this session can use solari now; other shells need to be reopened"
 	}
 	Write-Log "next: solari auth login"
 } finally {
