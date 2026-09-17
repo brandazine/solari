@@ -69,6 +69,14 @@ else
 fi
 
 log "installed ${INSTALL_DIR}/${BIN_NAME} ($("${INSTALL_DIR}/${BIN_NAME}" --version 2>/dev/null || echo "$VERSION"))"
+
+if init_out=$("${INSTALL_DIR}/${BIN_NAME}" init --detected </dev/null 2>&1); then
+	printf '%s\n' "$init_out" | while IFS= read -r line; do
+		[ -n "$line" ] && log "$line"
+	done
+else
+	log "note: could not register agents automatically — run: solari init"
+fi
 case ":$PATH:" in
 	*":${INSTALL_DIR}:"*) ;;
 	*) log "note: ${INSTALL_DIR} is not on PATH — add: export PATH=\"${INSTALL_DIR}:\$PATH\"" ;;
