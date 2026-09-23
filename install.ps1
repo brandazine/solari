@@ -68,6 +68,8 @@ if ($Version -eq "latest") {
 
 $tmpDir = Join-Path ([System.IO.Path]::GetTempPath()) ("solari-install-" + [System.Guid]::NewGuid().ToString("N"))
 New-Item -ItemType Directory -Path $tmpDir -Force | Out-Null
+$previousProgressPreference = $ProgressPreference
+$ProgressPreference = "SilentlyContinue"
 try {
 	Write-Log "downloading $asset ($Version)"
 	Invoke-WebRequest -Uri "$baseUrl/$asset" -OutFile (Join-Path $tmpDir $asset) -UseBasicParsing
@@ -126,5 +128,6 @@ try {
 	}
 	Write-Log "next: solari auth login"
 } finally {
+	$ProgressPreference = $previousProgressPreference
 	Remove-Item -Recurse -Force $tmpDir -ErrorAction SilentlyContinue
 }
