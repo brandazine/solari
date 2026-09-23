@@ -16,7 +16,7 @@ Windows (PowerShell):
 irm https://solari.sh/install.ps1 | iex
 ```
 
-The script picks the right binary for the machine, verifies it against the release checksums, installs to `~/.local/bin` (macOS/Linux) or `%LOCALAPPDATA%\Programs\solari` (Windows), and then runs `solari init --detected` so every agent already on this machine gets its skill file. The install writes outside the project folder; if your sandbox blocks it, ask the user to approve rather than skipping.
+The script picks the right binary for the machine, verifies it against the release checksums, installs to `~/.local/bin` (macOS/Linux) or `%USERPROFILE%\.solari\bin` (Windows), and then runs `solari init --detected` so every agent already on this machine gets its skill file. The install writes outside the project folder; if your sandbox blocks it, ask the user to approve rather than skipping.
 
 ## 2. Check it is on PATH
 
@@ -31,10 +31,10 @@ export PATH="$HOME/.local/bin:$PATH"
 Windows (the installer already added it to the user PATH, but a shell opened before the install, including the one your host app started, does not see it until the app restarts):
 
 ```powershell
-$env:Path = "$env:LOCALAPPDATA\Programs\solari;$env:Path"
+$env:Path = "$env:USERPROFILE\.solari\bin;$env:Path"
 ```
 
-If your shell does not persist between commands, call the binary by its full path: `~/.local/bin/solari` or `& "$env:LOCALAPPDATA\Programs\solari\solari.exe"`.
+If your shell does not persist between commands, call the binary by its full path: `~/.local/bin/solari` or `& "$env:USERPROFILE\.solari\bin\solari.exe"`.
 
 ## 3. Register the CLI with agents on this machine
 
