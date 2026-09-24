@@ -1,4 +1,4 @@
-<img src="assets/solari.png" alt="SOLARI" width="100%" />
+<img src="assets/solari.svg" alt="SOLARI" width="100%" />
 
 **English** · [한국어](README.ko.md) · [日本語](README.ja.md)
 
