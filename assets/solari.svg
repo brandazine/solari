@@ -1,0 +1,106 @@
+<svg width="1600" height="600" viewBox="0 0 1600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        :root {
+            --background-color: #FFD61F;
+            --background-subtle: rgba(255, 255, 255, 0.05);
+            --background-light: #FFEF93;
+            --background-accent: #FF5A4C;
+        }
+
+        #solari {
+            animation: solari-intro 1200ms cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        #subtle {
+            animation: subtle-drift 14s cubic-bezier(0.4, 0.2, 0.6, 0.8) infinite;
+        }
+
+        #light {
+            animation: light-drift 18s cubic-bezier(0.4, 0.2, 0.6, 0.8) infinite;
+        }
+
+        #accent {
+            transform-origin: 800px 1200px;
+            animation: accent-drift 18s cubic-bezier(0.4, 0.2, 0.6, 0.8) infinite;
+        }
+
+        @keyframes solari-intro {
+            0%, 50% {
+                opacity: 0;
+                transform: translate(0, 60px);
+            }
+            
+            100% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes subtle-drift {
+            0%, 100% { transform: translate(0px, 0px); }
+            12% { transform: translate(480px, -120px); }
+            34% { transform: translate(620px, 380px); }
+            45% { transform: translate(1320px, -80px); }
+            63% { transform: translate(1180px, 480px); }
+            78% { transform: translate(460px, 120px); }
+            92% { transform: translate(180px, 360px); }
+        }
+
+        @keyframes light-drift {
+            0%, 100% { transform: translate(0px, 0px); }
+            19% { transform: translate(-180px, 260px); }
+            28% { transform: translate(-980px, 680px); }
+            49% { transform: translate(-1240px, 160px); }
+            60% { transform: translate(-720px, 760px); }
+            81% { transform: translate(-520px, 80px); }
+            93% { transform: translate(-80px, 360px); }
+        }
+
+        @keyframes accent-drift {
+            0% { transform: translate(0px, 0px) scale(1); }
+            12% { transform: translate(320px, 120px) scale(1.18); }
+            27% { transform: translate(-100px, 64px) scale(1.08); }
+            43% { transform: translate(-420px, 156px) scale(1.24); }
+            58% { transform: translate(140px, 102px) scale(1.12); }
+            76% { transform: translate(380px, 200px) scale(1.3); }
+            90% { transform: translate(-160px, 56px) scale(1.06); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+    </style>
+    <g id="image" clip-path="url(#background)">
+        <rect width="1600" height="600" rx="16" fill="var(--background-color)"/>
+        <circle id="subtle" cx="-200" cy="000" r="800" fill="url(#subtle-gradient)" />
+        <circle id="light" cx="1600" cy="-400" r="1200" fill="url(#light-gradient)" />
+        <circle id="accent" cx="800" cy="1200" r="1200" fill="url(#accent-gradient)" />
+        <g id="solari">
+            <path d="M526.987 309.067C542.355 309.067 554.813 321.525 554.813 336.893V361.88H542.781V336.893C542.781 334.597 542.289 332.415 541.408 330.447L510.509 361.348L502 352.84L532.681 322.158C530.915 321.475 528.994 321.099 526.987 321.099H502V309.067H526.987Z" fill="black"/>
+            <path d="M624.879 321.099H599.892C597.596 321.099 595.414 321.59 593.446 322.471L624.347 353.371L615.839 361.88L585.157 331.198C584.474 332.965 584.098 334.885 584.098 336.893V361.88H572.066V336.893C572.066 321.525 584.524 309.067 599.892 309.067H624.879V321.099Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M787.851 256.552C812.063 256.552 831.581 275.772 831.581 299.921C831.581 324.07 812.063 343.29 787.851 343.29C763.639 343.29 744.12 324.07 744.12 299.921C744.12 275.772 763.639 256.552 787.851 256.552ZM787.851 268.149C770.68 268.149 756.862 282.795 756.862 299.921C756.862 317.047 770.68 331.569 787.851 331.569C805.022 331.569 818.839 317.047 818.839 299.921C818.839 282.795 805.022 268.149 787.851 268.149Z" fill="black"/>
+            <path d="M704.644 256.348C720.937 256.348 732.479 268.024 732.479 282.824H719.58C719.58 273.999 713.47 267.889 704.644 267.889C695.14 267.889 689.03 273.999 689.03 280.109C689.031 297.76 734.515 288.256 734.515 319.484C734.515 331.84 722.974 343.245 704.644 343.245C686.314 343.245 675.452 332.383 675.452 316.769H688.351C688.351 326.409 693.782 331.704 704.644 331.704C716.185 331.704 721.616 326.409 721.616 319.484C721.616 300.475 676.131 309.98 676.131 280.109C676.131 267.753 687.672 256.348 704.644 256.348Z" fill="black"/>
+            <path d="M856.66 330.347H897.393V342.567H843.761V257.027H856.66V330.347Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M982.079 342.567H968.501L961.033 322.879H927.089L919.621 342.567H906.043L938.63 257.027H949.492L982.079 342.567ZM931.841 310.659H956.281L944.061 276.715L931.841 310.659Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M1027.59 257.027C1041.85 257.027 1053.39 268.568 1053.39 282.824C1053.39 292.735 1048.64 298.71 1043.89 302.376C1041.04 304.548 1037.91 306.178 1034.38 307.264L1055.43 342.567H1041.17L1021.48 308.622H1006.55V342.567H993.65V257.027H1027.59ZM1006.55 296.402H1027.59C1034.38 296.402 1040.49 290.292 1040.49 282.824C1040.49 275.356 1034.38 269.247 1027.59 269.247H1006.55V296.402Z" fill="black"/>
+            <path d="M1082.53 342.567H1069.63V257.027H1082.53V342.567Z" fill="black"/>
+            <path d="M563.239 285.865C571.546 285.865 578.28 292.599 578.28 300.906C578.28 309.213 571.546 315.948 563.239 315.948C554.932 315.948 548.197 309.213 548.197 300.906C548.197 292.599 554.932 285.865 563.239 285.865Z" fill="black"/>
+            <path d="M554.813 263.987C554.813 279.355 542.355 291.813 526.987 291.813H502V279.781H526.987C528.995 279.781 530.914 279.404 532.681 278.721L502 248.04L510.509 239.532L541.408 270.432C542.289 268.464 542.781 266.283 542.781 263.987V239H554.813V263.987Z" fill="black"/>
+            <path d="M584.098 263.987C584.098 265.994 584.474 267.915 585.157 269.681L615.839 239L624.347 247.509L593.446 278.408C595.414 279.289 597.596 279.781 599.892 279.781H624.879V291.813H599.892C584.524 291.813 572.066 279.355 572.066 263.987V239H584.098V263.987Z" fill="black"/>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="subtle-gradient">
+            <stop offset="50%" stop-color="var(--background-subtle)" stop-opacity="1" />
+            <stop offset="100%" stop-color="var(--background-subtle)" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="light-gradient">
+            <stop offset="50%" stop-color="var(--background-light)" stop-opacity="1" />
+            <stop offset="100%" stop-color="var(--background-light)" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="accent-gradient">
+            <stop offset="50%" stop-color="var(--background-accent)" stop-opacity="1" />
+            <stop offset="100%" stop-color="var(--background-accent)" stop-opacity="0" />
+        </radialGradient>
+        <clipPath id="background">
+            <rect width="1600" height="600" rx="16" fill="black"/>
+        </clipPath>
+    </defs>
+</svg>
